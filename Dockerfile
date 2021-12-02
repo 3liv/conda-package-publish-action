@@ -1,10 +1,8 @@
-FROM continuumio/miniconda3:4.9.2
+FROM continuumio/miniconda:4.7.12
 
 LABEL "repository"="github.com/MichaelsJP/conda-package-publish-action"
 LABEL "maintainer"="Julian Psotta <julianpsotta@gmail.com>"
 
-RUN conda config --add channels r
-RUN conda config --add channels bioconda
 RUN conda install -y anaconda-client conda-build
 
 COPY entrypoint.sh /entrypoint.sh
